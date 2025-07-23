@@ -1,0 +1,1 @@
+console.log("this is a new file which is called test2.js");
