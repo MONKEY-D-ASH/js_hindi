@@ -1,3 +1,5 @@
+// what matters is coding is that the code should be readable and easy to understand , don't use complex terminologies , use the KISS concept which is "keep it simple stupid"
+
 let score = "aashish"
 
 // console.log(typeof score);
@@ -20,8 +22,45 @@ let boolean_is_logged_in = Boolean(is_logged_in)
 
 let sum_number = 69
 let sum_string = String(sum_number)
-console.log(sum_string)
-console.log(typeof sum_string)
+// console.log(sum_string)
+// console.log(typeof sum_string)
 
-console.log(sum_string + 3);
-console.log(sum_number + 3);
+// console.log(sum_string + 3);
+// console.log(sum_number + 3);
+
+// *****************************************operations**************************************
+
+let value = 3
+let neg_value = -value
+// console.log(neg_value);
+
+// console.log(2+2);
+// console.log(2-2);
+// console.log(2*2);
+// console.log(2**3);
+// console.log(2/2);
+// console.log(2%2);
+
+let str1 = "hello"
+let str2 = " hey"
+
+let str3 = str1 + str2
+// console.log(str3);
+
+// console.log("1" + 2);
+// console.log(1 + "2");
+// console.log("1" + 2 + 3); // a string is written first then all the following will be converted into a string implicitly
+// console.log(1 + 2 + "3"); // a number is written first then all the following will be converted into a number implicitly
+
+// console.log(+true);
+// console.log(+"");
+
+let num1 , num2 , num3
+ 
+num1 = num2 = num3 = 2+4
+
+let game_counter = 100
+++game_counter;
+console.log(game_counter);
+game_counter++;
+console.log(game_counter);
