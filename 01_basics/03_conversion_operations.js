@@ -64,3 +64,5 @@ let game_counter = 100
 console.log(game_counter);
 game_counter++;
 console.log(game_counter);
+
+// study this topic in js mdn under prefix and postfix 
