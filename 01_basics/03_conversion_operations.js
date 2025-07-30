@@ -47,10 +47,10 @@ let str2 = " hey"
 let str3 = str1 + str2
 // console.log(str3);
 
-// console.log("1" + 2);
-// console.log(1 + "2");
-// console.log("1" + 2 + 3); // a string is written first then all the following will be converted into a string implicitly
-// console.log(1 + 2 + "3"); // a number is written first then all the following will be converted into a number implicitly
+// console.log("1" + 2); // output is 12
+// console.log(1 + "2"); //output is 12
+// console.log("1" + 2 + 3); // output is 123 a string is written first then all the following will be converted into a string implicitly
+// console.log(1 + 2 + "3"); // output is 33 a number is written first then all the following will be converted into a number implicitly
 
 // console.log(+true);
 // console.log(+"");
