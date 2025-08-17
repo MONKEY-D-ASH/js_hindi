@@ -53,10 +53,40 @@ const obj3 = {...obj1,...obj2,...obj4} // using spread operator you can efficien
 
 // console.log(users[1].email); // now to access the data inside the array of objects 
 
-console.log(tinder_user);
-console.log(Object.keys(tinder_user)); // this returns an ARRAY of the keys of the object
-console.log(Object.values(tinder_user)); // this returns an ARRAY of the values of the object
-console.log(Object.entries(tinder_user)); // this returns an ARRAY of the keys and values of the object in an ARRAY
+// console.log(tinder_user);
+// console.log(Object.keys(tinder_user)); // this returns an ARRAY of the keys of the object
+// console.log(Object.values(tinder_user)); // this returns an ARRAY of the values of the object
+// console.log(Object.entries(tinder_user)); // this returns an ARRAY of the keys and values of the object in an ARRAY
 
-console.log(tinder_user.hasOwnProperty("is_logged_in")); // this property checks if an object has a certain property or not and return a boolean
+// console.log(tinder_user.hasOwnProperty("is_logged_in")); // this property checks if an object has a certain property or not and return a boolean
+
+
+const course = {
+    course_name: "js in hindi",
+    price: "999",
+    course_instructor: "aashish"
+}
+
+// console.log(course.course_instructor);
+
+const {course_instructor} = course // this called de-structuring, it is to avoid frequently writing (object.object_key) syntax , using this the syntax just become a bit short and you can access the element of the object directly by using it key. we an also give the key a different name using this syntax as given below 
+
+const {course_instructor: instructor } = course
+
+console.log(course_instructor);
+console.log(instructor);
+
+// this is the syntax of a JSON api or whatever it is 
+// {
+//     "name": "aashish",
+//     "course_name": "all you can code",
+//     "price": "free"
+// }
+
+
+// an array of api response or whatever it is 
+// [
+//     {},
+//     {},
+// ]
 
