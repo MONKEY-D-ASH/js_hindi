@@ -84,5 +84,6 @@ function return_second_value(arr){
     return arr[1];
 }
 
-console.log(return_second_value(my_new_array));
+// console.log(return_second_value(my_new_array));
+console.log(return_second_value([1,2,3,4,5]));
 
