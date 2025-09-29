@@ -24,8 +24,39 @@
 
 // shorthand notation of the if statement
 
-const balance = 1000
+// const balance = 1000
 
-if(balance > 500) console.log("test"); // this is called implicit scope, but has to be written in a single line and you cannot write multiple lines in this format, don't forget the semi-colon 
+// if(balance > 500) console.log("test"); // this is called implicit scope, but has to be written in a single line and you cannot write multiple lines in this format, don't forget the semi-colon 
 
-// nested conditinal statements
+// // nested conditinal statements
+
+// if(balance < 500){
+//     console.log("less than 750");
+// }
+// else if (balance < 750){
+//     console.log("less than 750");
+// }
+// else if (balance < 1001){
+//     console.log("less than 1001");
+// }
+// else {
+//     console.log(balance);
+// }
+
+
+const userLoggedIn = true;
+const debitCard = true;
+const loggedInFromGoogle = false;
+const loggedInFromEmail = true;
+
+if (userLoggedIn && debitCard ){
+    console.log("allowed to go shopping");
+}
+else {
+    console.log("not allowed");
+}
+
+if (loggedInFromEmail || loggedInFromGoogle){
+    console.log("user logged in");
+}
+
