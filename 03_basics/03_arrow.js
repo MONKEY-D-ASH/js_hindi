@@ -33,9 +33,9 @@ const chai = () => { // this is how you declare a function using an arrow functi
 
 // const add_two = (num1, num2) => {
     // return num1 + num2
-// }
+// } since we started a scope here so we have to explicitly use return keyword to return the result
 
-// const add_two = (num1, num2) => num1 + num2  // this is an implicit return statement in which you don't have to use return statement 
+// const add_two = (num1, num2) => num1 + num2  // this is an implicit return statement in which you don't have to use return statement because we are not using a scope. 
 
 // const add_two = (num1, num2) => (num1 + num2) // this format is used very intensively in react.js, 
 const add_two = (num1, num2) => ({username: "aashish"}) // parenthesis are used in this format to return an object
