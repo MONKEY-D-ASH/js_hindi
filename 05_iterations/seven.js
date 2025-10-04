@@ -13,4 +13,3 @@ const newNums = myNumbers
                     .filter((num)=> num>=60)
 
 console.log(newNums);
-
