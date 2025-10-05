@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code </title>
+</head>
+<body style="background-color: #212121; color:white">
+    
+</body>
+<script>
+    // what we are doing is creating an element (but it is in the memory until we attach it to the document) and manipulating it in DOM
+   const div =  document.createElement('div') // creating an element using createElement tag
+   console.log(div);
+   div.className = "main" // setting class
+   div.id = Math.round(Math.random()*10+1) // sets a random number as id of div element
+   div.setAttribute("title", "chili p") // this method allows you to set an custom attribute of a tag in key value string pair format
+   div.style.backgroundColor = "green"
+   div.style.padding = "10px"
+//    div.innerText = "chai aur code" // this is also the way to do the same thing which is setting text in the div tag as below but it is not recommeded due to optimization.
+   const addText = document.createTextNode("chai aur code") // instead of setting inner text to the div we are directly creating a node in the DOM 
+   div.appendChild(addText) // adding the textNode element as a child node to the div tag using appendChild method 
+
+   document.body.appendChild(div) // this method attaches this div tag to the main document tag , so that it will be displayed on the web page
+   
+</script>
+</html>

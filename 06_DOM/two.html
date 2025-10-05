@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color:white">
+    <div class="parent">
+        <div class="day">monday</div>
+        <div class="day">tuesay</div>
+        <div class="day">wednesday</div>
+        <div class="day">thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent') // this querySelector method selects the first element containing the attribute inputed in it as an argument(it could be the tag name, id or class) , to select a whole class use . and you can also select using an id, it stores the elements in the form of a node list
+    // console.log(parent); 
+    // console.log(parent.children); // returns the child elements or nodes of th parent variable
+    // console.log(parent.children[1].innerHTML); // returns the text of first child of the parent variable
+
+
+    //  parent.children returns an HTML collection which is an array like property that use index and has length property that's why we can use for loop on it in javascript
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML); // prints the inner text of the elements
+    // }
+    
+    parent.children[1].style.color = "orange"
+    // console.log(parent.firstElementChild); // monday element 
+    // console.log(parent.lastElementChild); // thursday element
+
+    const dayOne = document.querySelector('.day')
+    // console.log(dayOne); // monday element 
+
+    // console.log(dayOne.parentElement); // whole parent element 
+    // console.log(dayOne.nextElementSibling); // next element of dayOne element that is tuesday
+
+    console.log("NODES: ", parent.childNodes); // this tell us that even a single line break is counted as a node in DOM tree structure that why there are 9 nodes in the node list. browser doesn't count consecutive line breaks seperately and that text in node list is the line break 
+    
+    
+
+</script>
+</html>
