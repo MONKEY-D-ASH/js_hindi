@@ -10,4 +10,41 @@
         <li>javascript</li>
     </ul>
 </body>
+<script>
+    // creating a function to add a list element in the web page
+    function addLanguage(langName){
+        const li = document.createElement('li') // creating a list element to be added 
+        li.innerHTML = `${langName}` // writing inner html for that list element 
+        document.querySelector('.language').appendChild(li) // appending this new element in the above language class 
+    }
+    addLanguage("python") 
+    addLanguage("typescript") 
+    // now this above is also a valid approach for this work but it's not effecient if the list already contains a large number of elements beacuse then browser will have to traverse through all of them to add the new element to the end 
+    // this is a more effecient approach using dsa behind the scenes
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName)) // adding inner text to the created element
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage("goLang")
+
+    // editing and removing 
+    const secondLang = document.querySelector('li:nth-child(2)') // this is a way of selecting the n-th element in the query selector , it gives the whole element as output
+    // console.log(secondLang); // you can see it returned the whole list tag    
+    // secondLang.innerHTML = "mojo" // this approach still works but is not well optimized as the browser will have to traverse to secondLang which will take more time  
+    const newLi = document.createElement('li') // second approach is creating a new element and appending the textNode as it's child node
+    // newLi.textContent = "mojo" // this is one way of assigning the inner text element to the tag, similar to innerHTML
+    newLi.appendChild(document.createTextNode("watch_mojo")) // this is another method to assign text to the new tag
+    secondLang.replaceWith(newLi) // this replace the current node with the given node 
+
+    // another edit
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = '<li>Typescript</li>' // this method replace the whole tag with the assigned tag
+
+    // removing an element 
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+
+</script>
 </html>
