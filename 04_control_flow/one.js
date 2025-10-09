@@ -59,4 +59,3 @@ else {
 if (loggedInFromEmail || loggedInFromGoogle){
     console.log("user logged in");
 }
-
