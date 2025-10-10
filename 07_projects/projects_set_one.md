@@ -91,3 +91,22 @@ form.addEventListener('submit', function(event){
 })
 
 ```
+
+# solution code
+
+## project 3
+
+```javascript
+// always write the setInterval function in this format mostly, 1000 is for 1sec, 2000 is for 2sec,the function specifies what will happen and that 1000 specifies after how much time it will happen according to the user's system settings.
+// date.toLocaleTimeString : this method returns the time portion of a date as a string according to user's locale setting
+
+const clock = document.querySelector('#clock');
+// document.getElementById('#clock')
+// creating a new date object
+
+setInterval(function () {
+  let date = new Date();
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
+
+```
