@@ -1,11 +1,90 @@
+<!-- alt tag represents the text in place of the image when the image is not able to load -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>chai aur code</title>
+    <title>chai aur code and events</title>
 </head>
-<body>
-    
+<body style="background-color: #212121; color: aliceblue;">
+    <h2>Amazing images</h2>
+    <div>
+        <ul id="images">
+            <li> <img width="200px" id="squirrel" src="https://images.pexels.com/photos/47547/squirrel-animal-cute-rodents-47547.jpeg" alt="squirrel"></li> 
+
+            <li> <img width="200px" id="chameleon" src="https://images.pexels.com/photos/62289/yemen-chameleon-chamaeleo-calyptratus-chameleon-reptile-62289.jpeg" alt=""></li>
+
+            <li> <img width="200px" id="rabbit" src="https://images.pexels.com/photos/4588065/pexels-photo-4588065.jpeg" alt=""></li>
+
+            <li> <img width="200px" id="polar_bear" src="https://images.pexels.com/photos/65320/polar-bear-bear-teddy-sleep-65320.jpeg" alt=""></li>
+
+            <li> <img width="200px" id="panda" src="https://images.pexels.com/photos/3608263/pexels-photo-3608263.jpeg" alt=""></li>
+
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
 </body>
+<script>
+    // all the events in javascript are mostly sequentilly executed events but there are some exceptions 
+    // one way is the use onclick (an inline approach in the html tag itself) function for events but this is not a good approach because it hinders when scaling in html unlike react 
+
+    //  second approach is this: this approach is good but not recommended as it doesn't provide much more options or features
+    // document.querySelector('#rabbit').onclick = function(){
+    //     alert('you have clicked on a rabbit')
+    // }
+
+    // another approach is attachEvent() which was used in ancient times
+    // another is jquery
+
+    // things you have to study about addEventListener: type, timestamp, defaultPrevented, target, toElement, srcElement, currentTarget 
+    // postion realated : clientX, clientY, screenX, screenY
+    // altKey, ctrlkey, shiftKey, keyCode
+
+    // this is the recommended approach: there are actually three paremeters in the addEventListeners method , the last one is false by default even if you don't define it. this false here represents event bubbling while true represents event capturing 
+
+    // bubbling-up : rabbit tag which is inside the ul list, so if rabbit is clicked then rabbit event is execute and then the ul event, so its bubbling up 
+    // capturing-down : rabbit is inside the the ul tag , so when rabbit is clicked, browser will move to the outer most tag in which it is embedded and then execute the events from there inside
+
+    // event.target returns the tag from which event is being triggered
+
+    // document.querySelector('#images').addEventListener('click', function(e){
+    //         console.log("clicked inside the ul");
+    // }, false)
+
+    // document.querySelector('#rabbit').addEventListener('click', function(e){
+    //         console.log("rabbit is clicked");
+    //         e.stopPropagation() // this method prevents the browser to propogate to the outer events or simply terminates further propogation, same is for event capturing
+    // }, false)
+    
+    document.querySelector('#google').addEventListener('click', function(e){
+        e.preventDefault() // prevents the default action associated with the event
+        // e.stopPropagation()
+        // console.log("google clicked");
+    },false)
+
+    document.querySelector('#images').addEventListener('click', function(e){
+            // my approach
+            // console.log(e.target.tagName);
+            // let name = e.target.tagName
+            // if (name === 'LI') {
+            //     e.target.remove()
+            // }
+            // else if(name === 'UL'){
+            //     alert("click on the images to remove");
+            // }
+            // else{
+            // e.target.parentNode.remove()
+            // }
+
+            // chai aur code approach
+            console.log(e.target.tagName);
+            console.log(e.target.id);
+            if(e.target.tagName === 'IMG' || e.target.tagName === 'A'){
+                let removeIt = e.target.parentNode
+                removeIt.remove()
+            }
+            // removeIt.parentNode.removeChild(removeIt) this is another way to remove the element 
+    },false)
+
+</script>
 </html>
