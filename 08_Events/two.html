@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // handler generally represents a function which doesn't have a name
+    // setTimeout delays a function by a specified time
+    // setInterval reapeats the function after an interval of time again and again 
+
+    // applying loop concept using setInterval and clearInterval methods
+    let count = 0
+    const aashish = function(){
+        if (count === 5) {
+            clearInterval(interv)
+        }
+        else{
+        console.log("aashish");
+        count = count + 1
+        }
+    }
+    const interv = setInterval(aashish,1000) //this is giving reference of the function as if we will write () along with it, it will get executed. keep it in mind this way like this () represents "call it" so when browser reads it, it will be call it
+
+    // const changeText = function(){
+    //     document.querySelector('h1').innerHTML = "best javascript playlist"
+    // }
+    // const changeMe = setTimeout(changeText, 7000);
+
+    // document.querySelector('#stop').addEventListener('click', function(){
+    //     clearTimeout(changeMe)
+    //     console.log("stopped");
+        
+    // })
+</script>
+</html>
