@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            width: 900px;
+            height: 900px;
+            background-color: red;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+
+        }
+
+        #photo{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            align-self:center;
+            margin-bottom: 500px ;
+        }
+
+    </style>
+</head>
+<body style="background-color: #212121; color: aliceblue">
+    <!-- this is an ajax type request which was used before the introduction of fetch in api calling, many systems are still running on this concept so its importat to understand this concept -->
+    <!-- 0 means UNSENT	Client has been created. open() not called yet.
+1	means OPENED	open() has been called.
+2	means HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	means LOADING	Downloading; responseText holds partial data.
+4	means DONE	The operation is complete. -->
+
+    <!-- <div class="card">
+        <div id="photo">profile image</div>
+        <div id="followers">followers</div>
+        <button id="display">click to display content</button>
+        <button id="hide">click to hide content</button>
+    </div> -->
+</body>
+<script>
+
+    // understanding API calling via XMLHttpRequest() object and a small project to diaply profile picture and current followers of github by accesing the required data from an api call
+
+    // JSON, which stands for JavaScript Object Notation, is a lightweight, text-based format for storing and exchanging data. It is widely used in web development to transfer data between a server and a web application because it is both human-readable and easily parsed by machines. JSON's language-independent nature makes it ideal for communication across different systems and programming languages. 
+    // JSON.parse is a process of converting a JSON string into a usable object, it takes a JSON formatted string into a JSON object
+    // onreadystatechange holds the status of the xmlhttpsrequest object, this function executes everytime the state is changed
+    // In most of the cases the response you get from the url is in the form of a string
+
+    const requestURL = 'https://api.github.com/users/MONKEY-D-ASH'
+    const xhr = new XMLHttpRequest() // an xml request is also a method, so first we make a new object of it.
+    xhr.open('GET', requestURL) 
+    
+    xhr.onreadystatechange = function(){ 
+        console.log(xhr.readyState); // this prints the state in which our api request is currently in
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)
+            console.log(data); 
+            console.log(data.avatar_url);
+
+            // const image = document.querySelector('#photo')
+            // const followers = document.querySelector('#followers')
+            // const button = document.querySelector('#display')
+            // const button2 = document.querySelector('#hide')
+            
+            // button.addEventListener('click', function(e){
+            // image.innerHTML = `<img src="${data.avatar_url}"></img>` 
+            // image.style.backgroundSize = 'cover';
+
+            // followers.innerHTML = `current followers: ${data.followers}`
+            // followers.style.color = "black"
+            // })
+
+            // button2.addEventListener('click', function(e){
+            //     image.innerHTML = `profile image`    
+            //     followers.innerHTML =  `followers`
+            // })
+        }        
+    }
+    
+    xhr.send() // when you do this only then the request is sent to the web server via this xmlrequest api, not when you only open the xml object
+
+    
+    
+</script>
+</html>
