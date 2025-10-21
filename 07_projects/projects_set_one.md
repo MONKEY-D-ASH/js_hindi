@@ -213,3 +213,67 @@ function newGame() {
 }
 
 ```
+# solution code
+
+## project 5
+
+```javascript
+const insert = document.querySelector('#insert')
+// adding an event listener on the whole window so that it also includes the keyboard keys which is being used
+// we have used a ternary operator to rectify the space bar problem 
+window.addEventListener('keydown', function(e){
+  insert.innerHTML = `
+    <div class='color'>
+  <table>
+  <tr>
+    <th>key pressed</th>
+    <th>key code</th>
+    <th>code</th>
+  </tr>
+  <tr>
+    <td>${e.key === " " ? "space" : e.key}</td> 
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+  </table>
+    </div> 
+  `
+})
+
+
+```
+# solution code
+
+## project 6
+
+```javascript
+const start = document.querySelector('#start')
+const stop = document.querySelector('#stop')
+const body = document.querySelector('body')
+const random = function(){
+  return Math.floor((Math.random()*255)+1)
+
+}
+const changeColor = function(){
+  body.style.backgroundColor = `rgb(${random()},${random()},${random()})`
+}
+
+let intervalID;
+
+const startChangingColor = function(){
+  // in this case if the inervalID value is null then only it will execute this block again, so multiple clicking the start button will not cause any problem anymore
+  if(intervalID == null){
+      intervalID = setInterval(changeColor,1000)
+    }
+}
+const stopChangingColor = function(){
+    clearInterval(intervalID)
+    intervalID = null; // what we are doing here is clearing the value of intervalID as we are stopping the process, its like a reset 
+}
+
+start.addEventListener('click', startChangingColor)
+stop.addEventListener('click', stopChangingColor)
+
+
+
+```

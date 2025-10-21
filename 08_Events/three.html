@@ -11,6 +11,13 @@
     <button id="stop">Stop</button>
 </body>
 <script>
-    
+    const name_date = function(name, age){
+        console.log(`hi! this is ${name} and I am ${age} years old.`, Date.now());
+    }
+    const interv = setInterval(name_date,2000, "Aashish", 22) // setInterval takes three parameters in which you can pass different data types as arguments in setInterval mehtod which is passed in the function each time it calls it 
+
+    document.querySelector('#stop').addEventListener('click', function(e){
+        clearInterval(interv) // this is used to clear the interval loop of setInterval method, it takes reference of the setInteral method 
+    },false)
 </script>
 </html>
