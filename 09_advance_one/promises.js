@@ -128,14 +128,28 @@ async function consumePromiseFive(){
 // consumePromiseFive()
 
 // so what is happening here: we created an async function in which the try block will executed the fetch function with await keyword , the fetch will return a promise and js will "await" until the promised is resolved, when the promise is resovled the next line will execute which is also an asynchronous task so it will return a promise and if we don't write await here the js will store the promise object in the data variable and it will get printed
-async function getAllUsers(){
-    try {
-        const response = await fetch('https://api.github.com/users/MONKEY-D-ASH')
-        const data = await response.json() // here we are type casting the fetch response into a json format which is also an asynchronous task so we have to put await in this too
-        console.log(data);
-        console.log(data.login);
-    } catch (error) {
-        console.log("E:", error);
-    }
-}
-getAllUsers()
+// async function getAllUsers(){
+//     try {
+//         const response = await fetch('https://api.github.com/users/MONKEY-D-ASH')
+//         const data = await response.json() // here we are type casting the fetch response into a json format which is also an asynchronous task so we have to put await in this too
+//         console.log(data);
+//         console.log(data.login);
+//     } catch (error) {
+//         console.log("E:", error);
+//     }
+// }
+// getAllUsers()
+
+// now writing the above program in then().catch() format
+
+fetch("https://jsonplaceholder.typicode.com/users")
+.then((response) => {
+    return response.json()
+})
+// this another then() because the above return is also a async task so it will return a promise which when get resolve "then" the lower then() function will execute
+.then((data) => {
+    console.log(data);
+})
+.catch((error) => {
+    console.log(error);
+})
