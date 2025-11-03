@@ -44,6 +44,14 @@ console.log(userThree instanceof user2); // this operator tells us if an object 
 // step 4: the function or the method executes 
 
 
+// NOTE: THE DEFAULT BEHAVIOUR OF JAVASCRIPT IS PROTOTYPAL BEHAVIOUR, it can be seen that javascript doesn't give up until it finds the value you are looking for,
+// it will access the parents and grandparents and many layers above until it finds NULL value 
+//  prototype is the reason behind the access of new keyword, classes, this keyword and prototypal inheritance behaviour 
+
+// array is also an object in javascript and object does not have a parent (NULL) 
+// similarly string is also an object and the object does not have have parent (NULL)
+// the properties available in the object are also available in the string and array.
+// so it can be seen that everything in javascript can be considered as an object 
 
 
 
