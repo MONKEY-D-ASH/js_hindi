@@ -22,3 +22,5 @@
 - Encapsulation
 - Inheritance
 - Polymorphism
+
+note: in windows the this keyword refers to the windows object by default but in node environment it refers to an empty object
