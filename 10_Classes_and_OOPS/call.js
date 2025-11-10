@@ -6,8 +6,7 @@ function setUserName(username){
 }
 
 function createUser(username, email, password){
-    setUserName.call(username) // this .call method is used to hold the reference of the function called here so that after it executes it doesn't disappear from the call stack and we would still have the values setted 
-     
+    setUserName.call(this,username) // this .call method is used to hold the reference of the function called here so that after it executes it doesn't disappear from the call stack and we would still have the values setted      
 
     this.email = email
     this.password = password
