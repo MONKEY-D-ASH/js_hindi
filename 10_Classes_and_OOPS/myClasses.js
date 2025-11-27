@@ -1,43 +1,45 @@
 // everything we are doing here is after the ES6 version of javascript 
 
-// class User {
+// class user {
 //     constructor(username, email, password){
 //         this.username = username
 //         this.email = email
 //         this.password = password
 //     }
 
-//     encryptPassword(){ //method is typically a custom function or a method provided by a third-party library that implements a cryptographic algorithm to transform a user's plain-text password into a secure, unreadable format.
+//     encryptPassword(){
 //         return `${this.password}abc`
 //     }
-//     changeUserName(){
+//     changeUsername(){
 //         return `${this.username.toUpperCase()}`
 //     }
 // }
 
-// const chai = new User("chuski", "chuski@gmail.com", 1234)
+// const chai = new user("chai", "chai@gmail.com", "123")
 
-// console.log(chai);
 // console.log(chai.encryptPassword());
-// console.log(chai.changeUserName());
+// console.log(chai.changeUsername());
 
-// behind the scene 
+// behind the scene if this functionality of classes was not available
 
-function User(username, email, password){
-    this.username = username
+function user(username, email, password){
+    this.username = username 
     this.email = email
     this.password = password
 }
 
-User.prototype.encryptPassword = function(){ // we are defining a method in the User object's prototype directly 
+user.prototype.encryptPassword = function(){
     return `${this.password}abc`
 }
 
-User.prototype.changeUserName = function(){
+user.prototype.changeUsername = function(){
     return `${this.username.toUpperCase()}`
 }
 
-const chai2 = new User("chai_ki_chuski", "chaichuski@gmail.com", 98723)
+const tea = new user("tea", "tea@gmail.com", "1234")
 
-console.log(chai2.encryptPassword());
-console.log(chai2.changeUserName());
+console.log(tea);
+console.log(tea.encryptPassword());
+console.log(tea.changeUsername());
+
+
