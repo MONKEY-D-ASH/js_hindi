@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure and chai</title>
+</head>
+<body style="background-color: #212121;">
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+</body>
+<script>
+    // function init() {
+    //     let name = "Mozilla";  
+    //     function displayName() {
+    //         console.log(name);  
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+// this is a case in which the function defined inside another function does have access to the variables of the parent function but two child functions inside a function does not share the variables and the parent cannot access the variables of the child function   
+
+    // function outer(){
+    //     let username = "aashish"
+    //     function innerfunction(){
+    //         let secret = "my123"
+    //         console.log("INNER", username);
+    //         let username2 = "avinash"
+    //     }
+    //     innerfunction()
+    //     function innerTwo(){
+    //         console.log("INNER TWO", username);
+    //     }
+    //     innerTwo()
+    //     console.log(secret);
+    // }
+    // outer()
+    // console.log("TOO OUTER", username);
+
+    // function makeFunc() {
+    //     const name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName;
+    // }
+
+    // const myFunc = makeFunc();
+    // myFunc();
+    
+</script>
+<script>
+    // document.getElementById("orange").addEventListener("click", (event)=>{
+    //     document.body.style.backgroundColor = "orange"
+    // })
+    // document.getElementById("green").addEventListener("click", (event)=>{
+    //     document.body.style.backgroundColor = "green"
+    // })
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}`
+        
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById("orange").addEventListener("click", clickHandler("orange"))
+    document.getElementById("green").addEventListener("click", clickHandler("green"))
+    // when you return a function's reference inside a function then the whole lexical scope of that function is sent in the reference and not just the refered function only 
+</script>
+</html>
